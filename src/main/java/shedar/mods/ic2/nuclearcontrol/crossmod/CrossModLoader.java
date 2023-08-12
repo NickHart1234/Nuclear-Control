@@ -6,6 +6,7 @@ import cpw.mods.fml.common.event.FMLInterModComms;
 import shedar.mods.ic2.nuclearcontrol.crossmod.RF.CrossTE;
 import shedar.mods.ic2.nuclearcontrol.crossmod.appeng.CrossAppeng;
 import shedar.mods.ic2.nuclearcontrol.crossmod.bigreactors.CrossBigReactors;
+import shedar.mods.ic2.nuclearcontrol.crossmod.gregtech.CrossGregtech;
 import shedar.mods.ic2.nuclearcontrol.crossmod.mekanism.CrossMekanism;
 import shedar.mods.ic2.nuclearcontrol.crossmod.vanilla.Vanilla;
 
@@ -27,6 +28,7 @@ public class CrossModLoader {
 
     public static void postinit(){
         CrossTE.intergrateTE();
+        CrossGregtech.intergrateTE();
         crossMekanism = new CrossMekanism();
         if(Loader.isModLoaded(ModLib.MEKANISM)){CrossMekanism.LoadItems();}
     }

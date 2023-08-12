@@ -34,6 +34,7 @@ item.ItemVanillaMachineCard.name=Карта-датчик 'ванильных' м
 item.ItemInventoryScannerCard.name=Карта-датчик для инвентаря
 item.ItemVanilliaKit.name=Набор с датчиком для 'ванили'
 item.MekRFenergyCard.name=Карта-датчик энергии Mekanism.
+item.GregTechEnergyCard.name=Карта-датчик энергии Gregtech
 
 #Internal Blocks
 tile.blockThermalMonitor.name=Датчик температуры
@@ -86,12 +87,14 @@ msg.nc.InfoPanelEnergy=Энергия: %s
 msg.nc.InfoPanelEnergyFree=Свободно: %s
 msg.nc.InfoPanelEnergyStorage=Хранится: %s
 msg.nc.InfoPanelEnergyPercentage=Заполнено: %s%%
+msg.nc.InfoPanelEnergyType=Тип энергии: %s
 
 msg.nc.cbInfoPanelLiquidName=Название жидкости
 msg.nc.cbInfoPanelLiquidAmount=Количество
 msg.nc.cbInfoPanelLiquidCapacity=Ёмкость
 msg.nc.cbInfoPanelLiquidFree=Свободно
 msg.nc.cbInfoPanelLiquidPercentage=Процент заполнения
+msg.nc.cbInfoPanelEnergyType=Тип энергии
 
 msg.nc.InfoPanelLiquidName=Название: %s
 msg.nc.InfoPanelLiquidAmount=Количество: %s

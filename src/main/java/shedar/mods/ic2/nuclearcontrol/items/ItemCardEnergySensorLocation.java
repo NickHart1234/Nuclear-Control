@@ -1,5 +1,6 @@
 package shedar.mods.ic2.nuclearcontrol.items;
 
+import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
@@ -7,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.world.World;
+import shedar.mods.ic2.nuclearcontrol.IC2NuclearControl;
 import shedar.mods.ic2.nuclearcontrol.api.*;
 import shedar.mods.ic2.nuclearcontrol.crossmod.EnergyStorageData;
 import shedar.mods.ic2.nuclearcontrol.panel.CardWrapperImpl;
@@ -143,4 +145,12 @@ public class ItemCardEnergySensorLocation extends ItemCardBase implements IRemot
 		return result;
 	}
 
+	@Override
+	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
+	    if (player.isSneaking()) {
+	        return new ItemStack(IC2NuclearControl.instance.itemEnergySensorKit);
+	    } 
+
+	    return stack;
+	}
 }

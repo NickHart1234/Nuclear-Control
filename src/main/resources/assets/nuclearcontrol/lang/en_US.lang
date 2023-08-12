@@ -34,6 +34,7 @@ item.ItemVanillaMachineCard.name=Vanilla Machine Card
 item.ItemInventoryScannerCard.name=Inventory Tracking Card
 item.ItemVanilliaKit.name=Vanilla Kit
 item.MekRFenergyCard.name=Mekanism Energy Card
+item.GregTechEnergyCard.name=GregTech Energy Card
 
 #Internal Blocks
 tile.blockThermalMonitor.name=Thermal Monitor
@@ -86,12 +87,14 @@ msg.nc.InfoPanelEnergy=Energy: %s
 msg.nc.InfoPanelEnergyFree=Free: %s
 msg.nc.InfoPanelEnergyStorage=Storage: %s
 msg.nc.InfoPanelEnergyPercentage=Fill: %s%%
+msg.nc.InfoPanelEnergyType=EnergyType: %s
 
 msg.nc.cbInfoPanelLiquidName=Liquid name
 msg.nc.cbInfoPanelLiquidAmount=Amount
 msg.nc.cbInfoPanelLiquidCapacity=Capacity
 msg.nc.cbInfoPanelLiquidFree=Free
 msg.nc.cbInfoPanelLiquidPercentage=Fill percentage
+msg.nc.cbInfoPanelEnergyType=EnergyType
 
 msg.nc.InfoPanelLiquidName=Name: %s
 msg.nc.InfoPanelLiquidAmount=Amount: %s

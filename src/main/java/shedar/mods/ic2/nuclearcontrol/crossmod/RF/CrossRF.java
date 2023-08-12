@@ -8,6 +8,8 @@ import shedar.mods.ic2.nuclearcontrol.crossmod.ModLib;
 import shedar.mods.ic2.nuclearcontrol.tileentities.TileEntityAverageCounter;
 import shedar.mods.ic2.nuclearcontrol.tileentities.TileEntityEnergyCounter;
 
+import cofh.api.energy.IEnergyHandler;
+
 public class CrossRF {
 
 	public boolean _RFModPresent = false;
@@ -57,6 +59,8 @@ public class CrossRF {
         RFTileEntityAverageCounter tile = new RFTileEntityAverageCounter();
         if(tile.storage == null)
             return null;
+        if(!(target instanceof IEnergyHandler))
+        	return null;
         EnergyStorageData result = new EnergyStorageData();
         result.capacity = tile.storage.getMaxEnergyStored();
         result.stored = tile.storage.getEnergyStored();
