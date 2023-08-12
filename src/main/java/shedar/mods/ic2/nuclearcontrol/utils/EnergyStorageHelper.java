@@ -4,6 +4,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import shedar.mods.ic2.nuclearcontrol.IC2NuclearControl;
 import shedar.mods.ic2.nuclearcontrol.crossmod.EnergyStorageData;
+import shedar.mods.ic2.nuclearcontrol.crossmod.gregtech.CrossGregtech;
 
 public class EnergyStorageHelper {
 
@@ -16,9 +17,13 @@ public class EnergyStorageHelper {
 			return IC2NuclearControl.instance.crossIc2.getStorageData(entity);
 		case EnergyStorageData.TARGET_TYPE_RF:
 			return IC2NuclearControl.instance.crossRF.getStorageData(entity);
+		case EnergyStorageData.TARGET_TYPE_GT:
+			return CrossGregtech.getStorageData(entity);
 		case EnergyStorageData.TARGET_TYPE_UNKNOWN:
 			EnergyStorageData data = IC2NuclearControl.instance.crossIc2.getStorageData(entity);
 			if (data == null) { //TODO: there's probably a better way to do this for future integration
+				data = CrossGregtech.getStorageData(entity);
+			}if (data == null) { //TODO: there's probably a better way to do this for future integration
 				data = IC2NuclearControl.instance.crossRF.getStorageData(entity);
 			}
 			return data;

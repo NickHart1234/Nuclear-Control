@@ -10,6 +10,8 @@ import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.world.World;
 import shedar.mods.ic2.nuclearcontrol.IC2NuclearControl;
 import shedar.mods.ic2.nuclearcontrol.crossmod.EnergyStorageData;
+import shedar.mods.ic2.nuclearcontrol.crossmod.gregtech.CrossGregtech;
+import shedar.mods.ic2.nuclearcontrol.crossmod.gregtech.ItemCardGregtechEnergyLocation;
 import shedar.mods.ic2.nuclearcontrol.crossmod.ModLib;
 import shedar.mods.ic2.nuclearcontrol.crossmod.RF.CrossTE;
 import shedar.mods.ic2.nuclearcontrol.crossmod.mekanism.CrossMekanism;
@@ -34,6 +36,9 @@ public class ItemKitEnergySensor extends ItemSensorKitBase {
 				} else if (storageData.type == EnergyStorageData.TARGET_TYPE_RF) {
 					return new ItemStack(CrossTE.RFSensorCard);
 				}
+				else if (tileEntity instanceof gregapi.tileentity.energy.ITileEntityEnergyDataCapacitor) {
+					return new ItemStack(CrossGregtech.GregtechSensorCard);
+				}
 				return new ItemStack(IC2NuclearControl.itemEnergySensorLocationCard);
 			}
 		return new ItemStack(IC2NuclearControl.itemEnergySensorLocationCard);
@@ -54,8 +59,9 @@ public class ItemKitEnergySensor extends ItemSensorKitBase {
 		EnergyStorageData storage = EnergyStorageHelper.getStorageAt(world, x, y, z, EnergyStorageData.TARGET_TYPE_UNKNOWN);
 		if (storage != null) {
 			ItemStack sensorLocationCard = getItemStackbyType(storage, world.getTileEntity(x, y, z));
-
+			
 			NBTTagCompound nbtTagCompound = ItemStackUtils.getTagCompound(sensorLocationCard);
+			nbtTagCompound.setInteger("side", side);
 			nbtTagCompound.setInteger("x", x);
 			nbtTagCompound.setInteger("y", y);
 			nbtTagCompound.setInteger("z", z);
